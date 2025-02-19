@@ -1,3 +1,1 @@
-. "$(dirname -- "$0")/_/husky.sh"
-
 npx pretty-quick --parttern "src/**/*.*(ts|json|html|scss)" --stage && ng lint --fix
