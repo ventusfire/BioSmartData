@@ -1,0 +1,35 @@
+<div class="pt-6 web">
+    <img
+        class="img rounded-[100%] object-cover mb-[10px]"
+        [width]="profilePicSize()"
+        [height]="profilePicSize()"
+        [src]="userData().avatar_url"
+        alt=""
+    />
+    <div [class.hide-header-text]="sideNavCollapsed()">
+        <h2 class="m-0 text-xl">{{ userData().login }}</h2>
+        <p class="m-0 text-[1rem]">
+            @if (userData().company !== 'null') {
+                {{ userData().company }}
+            } @else {
+                BioSmartData
+            }
+        </p>
+    </div>
+</div>
+<mat-nav-list>
+    @for (item of meniItem(); track $index) {
+        <a
+            mat-list-item
+            [routerLink]="item.routes"
+            routerLinkActive="border-solid border-[5px] border"
+            #rla="routerLinkActive"
+            [activated]="rla.isActive"
+        >
+            <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+            @if (!sideNavCollapsed()) {
+                <span matListItemTitle>{{ item.label }}</span>
+            }
+        </a>
+    }
+</mat-nav-list>
