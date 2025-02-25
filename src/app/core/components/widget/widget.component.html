@@ -1,0 +1,16 @@
+<div
+    class="widget relative h-full p-8 box-border rounded-[inherit] overflow-hidden mat-elevation-z3"
+>
+    <h3 class="m-0">{{ data().label }}</h3>
+    <button
+        mat-icon-button
+        class="button absolute top-5 right-5"
+        (click)="showOptions.set(true)"
+    >
+        <mat-icon>settings</mat-icon>
+    </button>
+    <ng-container [ngComponentOutlet]="data().content" />
+    @if (showOptions()) {
+        <app-widget-options [data]="data()" [(showOptions)]="showOptions" />
+    }
+</div>

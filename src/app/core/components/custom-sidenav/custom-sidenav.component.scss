@@ -1,0 +1,33 @@
+:host * {
+    transition: all 500ms ease-in-out;
+}
+.web {
+    text-align: -webkit-center;
+    padding-top: 25px;
+
+    .img {
+        border-radius: 100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    h2 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 28px;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+.border {
+    border-left: solid 5px;
+}
+
+.hide-header-text {
+    opacity: 0;
+    height: 0;
+}
+
+.mdc-list-item:focus::before {
+    opacity: 0;
+}
